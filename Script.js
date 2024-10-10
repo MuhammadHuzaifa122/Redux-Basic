@@ -1,19 +1,13 @@
 let state = {
   count: 0,
+  name: "Ali",
+  age: 13,
 };
 
-let previousState = state;
-
-function increment() {
-  // mutating state which is not recommended in Redux
-  //   state.count = state.count + 1;
-  // Not Mutating the state
-  state = { count: state.count + 1 };
+function reducer(state) {
+  return { ...state, count: state.count + 1 };
 }
 
-increment();
-console.log(state);
-increment();
-console.log(state);
-increment();
-console.log(state);
+// What Redux Will Do
+
+reduxState = reducer(reduxState);
