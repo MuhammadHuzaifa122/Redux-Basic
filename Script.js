@@ -1,3 +1,7 @@
+import { createStore } from "redux";
+
+console.log(createStore);
+
 let reduxState = {
   post: 0,
   name: "Ali",
