@@ -9,6 +9,8 @@ function reducer(state, action) {
     return { ...state, post: state.post + 1 };
   } else if (action.type === "post/decrease") {
     return { ...state, post: state.post - 1 };
+  } else if (action.type === "post/increaseBy") {
+    return { ...state, post: state.post + action.payload };
   }
   return state;
 }
@@ -19,4 +21,8 @@ console.log(reduxState);
 reduxState = reducer(reduxState, { type: "post/increase" });
 console.log(reduxState);
 reduxState = reducer(reduxState, { type: "post/decrease" });
+console.log(reduxState);
+reduxState = reducer(reduxState, { type: "post/increaseBy", payload: 10 });
+console.log(reduxState);
+reduxState = reducer(reduxState, { type: "post/increaseBy", payload: 10 });
 console.log(reduxState);
