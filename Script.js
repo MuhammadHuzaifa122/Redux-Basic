@@ -1,5 +1,7 @@
 import { createStore } from "redux";
 
+const post = document.querySelector(".post-count");
+
 const initialState = {
   post: 0,
   name: "Ali",
@@ -32,8 +34,15 @@ console.log(store);
 
 store.subscribe(() => {
   console.log(store.getState());
+  post.innerText = store.getState().post;
 });
+
+post.innerText = store.getState().post;
 store.dispatch({ type: INCREASE });
 store.dispatch({ type: DECREASE });
-store.dispatch({ type: INCREASE_BY, payload: 5 });
+store.dispatch({ type: INCREASE_BY, payload: 15 });
 store.dispatch({ type: DECREASE_BY, payload: 3 });
+
+setTimeout(() => {
+  store.dispatch({ type: DECREASE });
+}, 2000);
