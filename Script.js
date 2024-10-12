@@ -6,14 +6,19 @@ const initialState = {
   age: 13,
 };
 
+const INCREASE = "post/increase";
+const DECREASE = "post/decrease";
+const INCREASE_BY = "post/inreaseBy";
+const DECREASE_BY = "post/decreaseBy";
+
 function reducer(state = initialState, action) {
-  if (action.type === "post/increase") {
+  if (action.type === INCREASE) {
     return { ...state, post: state.post + 1 };
-  } else if (action.type === "post/decrease") {
+  } else if (action.type === DECREASE) {
     return { ...state, post: state.post - 1 };
-  } else if (action.type === "post/increaseBy") {
+  } else if (action.type === INCREASE_BY) {
     return { ...state, post: state.post + action.payload };
-  } else if (action.type === "post/decreaseBy") {
+  } else if (action.type === DECREASE_BY) {
     return { ...state, post: state.post - action.payload };
   }
   return state;
@@ -25,7 +30,7 @@ console.log(store);
 store.subscribe(() => {
   console.log(store.getState());
 });
-store.dispatch({ type: "post/increase" });
-store.dispatch({ type: "post/decrease" });
-store.dispatch({ type: "post/increaseBy", payload: 5 });
-store.dispatch({ type: "post/decreaseBy", payload: 3 });
+store.dispatch({ type: INCREASE });
+store.dispatch({ type: DECREASE });
+store.dispatch({ type: INCREASE_BY, payload: 5 });
+store.dispatch({ type: DECREASE_BY, payload: 3 });
