@@ -9,6 +9,7 @@ const initialState = {
 
 const cartAddItems = "cart/addItem";
 const cartRemoveItems = "cart/removeItem";
+const CartIncreaseItemQuantity = "cart/increaseItemQuantity";
 
 function reducer(state = initialState, action) {
   switch (action.type) {
@@ -24,6 +25,16 @@ function reducer(state = initialState, action) {
           (cartItem) => cartItem.productId !== action.payload.productId
         ),
       };
+    case CartIncreaseItemQuantity:
+      return {
+        ...state,
+        cartItems: state.cartItems.map((cartItem) => {
+          if (cartItem.productId === action.payload.productId) {
+            return { ...cartItem, quantity: cartItem.quantity + 1 };
+          }
+          return cartItem;
+        }),
+      };
     default:
       return state;
   }
@@ -34,22 +45,27 @@ const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__?.());
 console.log(store);
 
 store.dispatch({
-  type: "cart/addItem",
+  type: cartAddItems,
   payload: { productId: 1, quantity: 1 },
 });
 store.dispatch({
-  type: "cart/addItem",
+  type: cartAddItems,
   payload: { productId: 12, quantity: 1 },
 });
 store.dispatch({
-  type: "cart/addItem",
+  type: cartAddItems,
   payload: { productId: 15, quantity: 1 },
 });
 store.dispatch({
-  type: "cart/addItem",
+  type: cartAddItems,
   payload: { productId: 6, quantity: 1 },
 });
 store.dispatch({
-  type: "cart/removeItem",
+  type: cartRemoveItems,
   payload: { productId: 6 },
 });
+store.dispatch({
+  type: CartIncreaseItemQuantity,
+  payload: { productId: 12 },
+});
+console.log(store.getState());
