@@ -1,17 +1,17 @@
-50
+51
 64C:\Redux\Redux-Intro\node_modules\redux\dist\redux.legacy-esm.js133731141017463096 0
 32C:\Redux\Redux-Intro\my-redux.js133732857363896151 0
 31C:\Redux\Redux-Intro\.gitignore133731143516946565 0
-25C:\Redux\Redux-Intro\dist133732864084708247 1
+25C:\Redux\Redux-Intro\dist133732869438395153 1
 62C:\Redux\Redux-Intro\node_modules\redux\src\combineReducers.ts133731141022848483 0
-31C:\Redux\Redux-Intro\index.html133732042057249803 0
+31C:\Redux\Redux-Intro\index.html133732869432731467 0
 61C:\Redux\Redux-Intro\node_modules\redux\src\utils\isAction.ts133731141023108612 0
 52C:\Redux\Redux-Intro\node_modules\.package-lock.json133731141024020947 0
 33C:\Redux\Redux-Intro\node_modules133731141024010909 1
 52C:\Redux\Redux-Intro\node_modules\redux\package.json133731141017483075 0
 38C:\Redux\Redux-Intro\package-lock.json133731141023930966 0
 33C:\Redux\Redux-Intro\package.json133731141023750941 0
-30C:\Redux\Redux-Intro\Script.js133732864461392894 0
+30C:\Redux\Redux-Intro\Script.js133732869306403038 0
 39C:\Redux\Redux-Intro\node_modules\redux133731141018485885 1
 44C:\Redux\Redux-Intro\node_modules\redux\dist133731141023308582 1
 50C:\Redux\Redux-Intro\node_modules\redux\LICENSE.md133731141018065966 0
@@ -34,6 +34,7 @@
 70C:\Redux\Redux-Intro\node_modules\redux\src\utils\symbol-observable.ts133731141023530933 0
 60C:\Redux\Redux-Intro\node_modules\redux\src\utils\warning.ts133731141023570909 0
 63C:\Redux\Redux-Intro\node_modules\redux\src\types\middleware.ts133731141023228658 0
+36C:\Redux\Redux-Intro\productsList.js133732867194112573 0
 61C:\Redux\Redux-Intro\node_modules\redux\src\types\reducers.ts133731141023288593 0
 58C:\Redux\Redux-Intro\node_modules\redux\src\types\store.ts133731141023520941 0
 48C:\Redux\Redux-Intro\node_modules\redux\dist\cjs133731141017623161 1
@@ -44,8 +45,8 @@
 62C:\Redux\Redux-Intro\node_modules\redux\dist\cjs\redux.cjs.map133731141017856561 0
 43C:\Redux\Redux-Intro\dist\index.142cf98c.js133731140520062822 0
 47C:\Redux\Redux-Intro\dist\index.142cf98c.js.map133731140521128242 0
-36C:\Redux\Redux-Intro\dist\index.html133732864084458285 0
+36C:\Redux\Redux-Intro\dist\index.html133732869438375199 0
 49C:\Redux\Redux-Intro\dist\Redux-Intro.3464ddca.js133731140520062822 0
 53C:\Redux\Redux-Intro\dist\Redux-Intro.3464ddca.js.map133731140521128242 0
-43C:\Redux\Redux-Intro\dist\index.3ecf0203.js133732864084588250 0
-47C:\Redux\Redux-Intro\dist\index.3ecf0203.js.map133732864084648314 0
+43C:\Redux\Redux-Intro\dist\index.3ecf0203.js133732869437970841 0
+47C:\Redux\Redux-Intro\dist\index.3ecf0203.js.map133732869438050896 0

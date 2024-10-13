@@ -1,82 +1,12 @@
 import { createStore } from "redux";
-import { myCreateStore } from "./my-redux";
-const postCountElement = document.querySelector(".post-count");
-
-// const initialState = {
-//   post: 0,
-//   name: "Anurag Singh",
-//   age: 26,
-// };
+import { productsList } from "./productsList";
 const initialState = {
-  products: [
-    {
-      id: 1,
-      title: "T-Shirt",
-      price: 100,
-      description: "This is a t-shirt",
-      rating: 4.5,
-      rating: { count: 10, value: 4.3 },
-      imageUrl: "ahdcbjdb",
-    },
-  ],
-  cartItems: [
-    {
-      productId: 1,
-      quantity: 2,
-    },
-  ],
-  wishList: [3, 2, 5], // We can add only product id in wishlist
+  products: productsList,
+  cartItems: [],
+  wishList: [], // We can add only product id in wishlist
 };
 
-const INCREMENT = "post/increment";
-const DECREMENT = "post/decrement";
-const INCREASE_BY = "post/increaseBy";
-const DECREASE_BY = "post/decreaseBy";
-
-function reducer(state = initialState, action) {
-  switch (action.type) {
-    case INCREMENT:
-      return { ...state, post: state.post + 1 };
-    case DECREMENT:
-      return { ...state, post: state.post - 1 };
-    case INCREASE_BY:
-      return { ...state, post: state.post + action.payload };
-    case DECREASE_BY:
-      return { ...state, post: state.post - action.payload };
-    default:
-      return state;
-  }
-}
+function reducer(state = initialState, action) {}
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__?.());
-const myStore = myCreateStore(reducer);
-
-// console.log(store);
-console.log(myStore);
-
-const unsubscribe1 = myStore.subscribe(() => {
-  console.log(myStore.getState());
-  postCountElement.innerText = myStore.getState().post;
-});
-
-const unsubscribe2 = myStore.subscribe(() => {
-  console.log("hii");
-});
-
-const unsubscribe3 = myStore.subscribe(() => {
-  console.log("hello");
-});
-
-postCountElement.innerText = myStore.getState().post;
-
-myStore.dispatch({ type: INCREMENT });
-
-unsubscribe2();
-unsubscribe3();
-myStore.dispatch({ type: DECREMENT });
-myStore.dispatch({ type: INCREASE_BY, payload: 15 });
-myStore.dispatch({ type: DECREASE_BY, payload: 5 });
-
-postCountElement.addEventListener("click", () => {
-  myStore.dispatch({ type: INCREMENT });
-});
+console.log(store);
