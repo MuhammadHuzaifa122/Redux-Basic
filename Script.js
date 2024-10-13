@@ -8,13 +8,21 @@ const initialState = {
 };
 
 const cartAddItems = "cart/addItem";
-const cartRemoveItems = "cart/RemoveItem";
+const cartRemoveItems = "cart/removeItem";
+
 function reducer(state = initialState, action) {
   switch (action.type) {
     case cartAddItems:
       return {
         ...state,
         cartItems: [...state.cartItems, action.payload],
+      };
+    case cartRemoveItems:
+      return {
+        ...state,
+        cartItems: state.cartItems.filter(
+          (cartItem) => cartItem.productId !== action.payload.productId
+        ),
       };
     default:
       return state;
@@ -40,4 +48,8 @@ store.dispatch({
 store.dispatch({
   type: "cart/addItem",
   payload: { productId: 6, quantity: 1 },
+});
+store.dispatch({
+  type: "cart/removeItem",
+  payload: { productId: 6 },
 });
