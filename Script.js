@@ -2,10 +2,30 @@ import { createStore } from "redux";
 import { myCreateStore } from "./my-redux";
 const postCountElement = document.querySelector(".post-count");
 
+// const initialState = {
+//   post: 0,
+//   name: "Anurag Singh",
+//   age: 26,
+// };
 const initialState = {
-  post: 0,
-  name: "Anurag Singh",
-  age: 26,
+  products: [
+    {
+      id: 1,
+      title: "T-Shirt",
+      price: 100,
+      description: "This is a t-shirt",
+      rating: 4.5,
+      rating: { count: 10, value: 4.3 },
+      imageUrl: "ahdcbjdb",
+    },
+  ],
+  cartItems: [
+    {
+      productId: 1,
+      quantity: 2,
+    },
+  ],
+  wishList: [3, 2, 5], // We can add only product id in wishlist
 };
 
 const INCREMENT = "post/increment";
