@@ -12,6 +12,9 @@ const cartRemoveItems = "cart/removeItem";
 const CartIncreaseItemQuantity = "cart/increaseItemQuantity";
 const CartDecreaseItemQuantity = "cart/decreaseItemQuantity";
 
+const WishlistAddItems = "wishList/addItem";
+const WishlistRemoveItems = "wishList/removeItem";
+
 function reducer(state = initialState, action) {
   switch (action.type) {
     case cartAddItems:
@@ -46,6 +49,20 @@ function reducer(state = initialState, action) {
           return cartItem;
         }),
       };
+
+    case WishlistAddItems:
+      return {
+        ...state,
+        wishList: [...state.wishList, action.payload],
+      };
+    case WishlistRemoveItems:
+      return {
+        ...state,
+        wishList: state.wishList.filter(
+          (wishListItem) => wishListItem.productId !== action.payload.productId
+        ),
+      };
+
     default:
       return state;
   }
@@ -64,24 +81,19 @@ store.dispatch({
   payload: { productId: 12, quantity: 1 },
 });
 store.dispatch({
-  type: cartAddItems,
-  payload: { productId: 15, quantity: 1 },
-});
-store.dispatch({
-  type: cartAddItems,
-  payload: { productId: 6, quantity: 1 },
-});
-store.dispatch({
-  type: cartRemoveItems,
-  payload: { productId: 6 },
-});
-store.dispatch({
   type: CartIncreaseItemQuantity,
   payload: { productId: 12 },
 });
 store.dispatch({
-  type: CartDecreaseItemQuantity,
-  payload: { productId: 12 },
+  type: WishlistAddItems,
+  payload: { productId: 18 },
 });
-
+store.dispatch({
+  type: WishlistAddItems,
+  payload: { productId: 11 },
+});
+store.dispatch({
+  type: WishlistRemoveItems,
+  payload: { productId: 11 },
+});
 console.log(store.getState());
