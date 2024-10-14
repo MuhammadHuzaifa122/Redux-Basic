@@ -10,6 +10,7 @@ const initialState = {
 const cartAddItems = "cart/addItem";
 const cartRemoveItems = "cart/removeItem";
 const CartIncreaseItemQuantity = "cart/increaseItemQuantity";
+const CartDecreaseItemQuantity = "cart/decreaseItemQuantity";
 
 function reducer(state = initialState, action) {
   switch (action.type) {
@@ -31,6 +32,16 @@ function reducer(state = initialState, action) {
         cartItems: state.cartItems.map((cartItem) => {
           if (cartItem.productId === action.payload.productId) {
             return { ...cartItem, quantity: cartItem.quantity + 1 };
+          }
+          return cartItem;
+        }),
+      };
+    case CartDecreaseItemQuantity:
+      return {
+        ...state,
+        cartItems: state.cartItems.map((cartItem) => {
+          if (cartItem.productId === action.payload.productId) {
+            return { ...cartItem, quantity: cartItem.quantity - 1 };
           }
           return cartItem;
         }),
@@ -68,4 +79,9 @@ store.dispatch({
   type: CartIncreaseItemQuantity,
   payload: { productId: 12 },
 });
+store.dispatch({
+  type: CartDecreaseItemQuantity,
+  payload: { productId: 12 },
+});
+
 console.log(store.getState());
