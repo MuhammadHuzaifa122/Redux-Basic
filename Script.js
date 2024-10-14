@@ -42,12 +42,14 @@ function reducer(state = initialState, action) {
     case CartDecreaseItemQuantity:
       return {
         ...state,
-        cartItems: state.cartItems.map((cartItem) => {
-          if (cartItem.productId === action.payload.productId) {
-            return { ...cartItem, quantity: cartItem.quantity - 1 };
-          }
-          return cartItem;
-        }),
+        cartItems: state.cartItems
+          .map((cartItem) => {
+            if (cartItem.productId === action.payload.productId) {
+              return { ...cartItem, quantity: cartItem.quantity - 1 };
+            }
+            return cartItem;
+          })
+          .filter((cartItem) => cartItem.quantity > 0),
       };
 
     case WishlistAddItems:
