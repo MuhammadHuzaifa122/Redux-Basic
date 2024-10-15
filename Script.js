@@ -1,6 +1,12 @@
 import { combineReducers, createStore } from "redux";
-import { cartAddItems, CartIncreaseItemQuantity } from "./CartReducer";
-import { WishlistAddItems, WishlistRemoveItems } from "./WishlistReducer";
+import CartReducer, {
+  cartAddItems,
+  CartIncreaseItemQuantity,
+} from "./CartReducer";
+import WishListReducer, {
+  WishlistAddItems,
+  WishlistRemoveItems,
+} from "./WishlistReducer";
 import ProductsReducer from "./ProductsReducer";
 
 // const initialState = {
@@ -8,11 +14,12 @@ import ProductsReducer from "./ProductsReducer";
 //   cartItems: [],
 //   wishList: [], // We can add only product id in wishlist
 // };
-
-const store = createStore(
-  ProductsReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__?.()
-);
+const reducer = combineReducers({
+  products: ProductsReducer,
+  cartItems: CartReducer,
+  wishList: WishListReducer,
+});
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__?.());
 
 console.log(store);
 
