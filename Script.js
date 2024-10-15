@@ -9,16 +9,12 @@ import WishListReducer, {
 } from "./WishlistReducer";
 import ProductsReducer from "./ProductsReducer";
 
-// const initialState = {
-//   products: productsList,
-//   cartItems: [],
-//   wishList: [], // We can add only product id in wishlist
-// };
 const reducer = combineReducers({
   products: ProductsReducer,
   cartItems: CartReducer,
   wishList: WishListReducer,
 });
+
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__?.());
 
 console.log(store);
