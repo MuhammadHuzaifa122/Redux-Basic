@@ -1,6 +1,6 @@
-const WishlistAddItems = "wishList/addItem";
-const WishlistRemoveItems = "wishList/removeItem";
-export function WishListReducer(state = [], action) {
+export const WishlistAddItems = "wishList/addItem";
+export const WishlistRemoveItems = "wishList/removeItem";
+export default function WishListReducer(state = [], action) {
   switch (action.type) {
     case WishlistAddItems:
       return {

@@ -1,9 +1,9 @@
-const cartAddItems = "cart/addItem";
-const cartRemoveItems = "cart/removeItem";
-const CartIncreaseItemQuantity = "cart/increaseItemQuantity";
-const CartDecreaseItemQuantity = "cart/decreaseItemQuantity";
+export const cartAddItems = "cart/addItem";
+export const cartRemoveItems = "cart/removeItem";
+export const CartIncreaseItemQuantity = "cart/increaseItemQuantity";
+export const CartDecreaseItemQuantity = "cart/decreaseItemQuantity";
 
-export function CartReducer(state = [], action) {
+export default function CartReducer(state = [], action) {
   function reducer(state = initialState, action) {
     switch (action.type) {
       case cartAddItems:
