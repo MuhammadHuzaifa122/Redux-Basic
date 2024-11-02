@@ -2,6 +2,7 @@
 
 import { combineReducers, createStore } from "redux";
 import CartReducer, {
+  CartAddItem,
   cartAddItems,
   CartDecreaseItemQuantity,
   CartIncreaseItemQuantity,
@@ -24,14 +25,8 @@ const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__?.());
 
 console.log(store);
 
-store.dispatch({
-  type: cartAddItems,
-  payload: { productId: 1, quantity: 1 },
-});
-store.dispatch({
-  type: cartAddItems,
-  payload: { productId: 12, quantity: 1 },
-});
+store.dispatch(CartAddItem(12));
+store.dispatch(CartAddItem(1));
 store.dispatch(increaseCartItemQuantity(12));
 store.dispatch(decreaseCartItemQuantity(12));
 store.dispatch(decreaseCartItemQuantity(12));
