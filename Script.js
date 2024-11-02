@@ -35,16 +35,8 @@ store.dispatch({
   type: CartIncreaseItemQuantity,
   payload: { productId: 12 },
 });
-store.dispatch({
-  type: CartIncreaseItemQuantity,
-  payload: { productId: 12 },
-});
-store.dispatch({
-  type: CartDecreaseItemQuantity,
-  payload: { productId: 12 },
-});
-const a = decreaseCartItemQuantity(70);
-console.log(a);
+store.dispatch(decreaseCartItemQuantity(12));
+store.dispatch(decreaseCartItemQuantity(12));
 
 store.dispatch({
   type: WishlistAddItems,

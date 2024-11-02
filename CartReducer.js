@@ -30,21 +30,14 @@ export default function CartReducer(state = [], action) {
       });
 
     case CartDecreaseItemQuantity:
-      if (state.cartItems) {
-        return {
-          ...state,
-          cartItems: state.cartItems
-            .map((cartItem) => {
-              if (cartItem.productId === action.payload.productId) {
-                return { ...cartItem, quantity: cartItem.quantity - 1 };
-              }
-              return cartItem;
-            })
-            .filter((cartItem) => cartItem.quantity > 0),
-        };
-      } else {
-        return state;
-      }
+      return state
+        .map((cartItem) => {
+          if (cartItem.productId === action.payload.productId) {
+            return { ...cartItem, quantity: cartItem.quantity - 1 };
+          }
+          return cartItem;
+        })
+        .filter((cartItem) => cartItem.quantity > 0);
 
     default:
       return state;
