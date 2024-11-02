@@ -23,6 +23,13 @@ export function CartAddItem(productId, quantity = 1) {
     payload: { productId, quantity },
   };
 }
+
+export function CartRemoveItem(productId, quantity = 1) {
+  return {
+    type: cartRemoveItems,
+    payload: { productId },
+  };
+}
 //Reducers
 export default function CartReducer(state = [], action) {
   switch (action.type) {

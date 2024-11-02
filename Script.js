@@ -10,6 +10,8 @@ import CartReducer, {
   increaseCartItemQuantity,
 } from "./CartReducer";
 import WishListReducer, {
+  AddWhishlistItem,
+  RemoveWishlistItems,
   WishlistAddItems,
   WishlistRemoveItems,
 } from "./WishlistReducer";
@@ -27,20 +29,13 @@ console.log(store);
 
 store.dispatch(CartAddItem(12));
 store.dispatch(CartAddItem(1));
+
 store.dispatch(increaseCartItemQuantity(12));
+
 store.dispatch(decreaseCartItemQuantity(12));
 store.dispatch(decreaseCartItemQuantity(12));
 
-store.dispatch({
-  type: WishlistAddItems,
-  payload: { productId: 18 },
-});
-store.dispatch({
-  type: WishlistAddItems,
-  payload: { productId: 11 },
-});
-store.dispatch({
-  type: WishlistRemoveItems,
-  payload: { productId: 11 },
-});
-console.log(store.getState());
+store.dispatch(AddWhishlistItem(18));
+store.dispatch(AddWhishlistItem(11));
+
+store.dispatch(RemoveWishlistItems(11));
