@@ -1,6 +1,7 @@
 //action Types
-export const WishlistAddItems = "wishList/addItem";
-export const WishlistRemoveItems = "wishList/removeItem";
+const WishlistAddItems = "wishList/addItem";
+const WishlistRemoveItems = "wishList/removeItem";
+
 //Action Creator
 export function AddWhishlistItem(productId) {
   return {

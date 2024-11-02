@@ -1,8 +1,8 @@
 //Action Types
-export const cartAddItems = "cart/addItem";
-export const cartRemoveItems = "cart/removeItem";
-export const CartIncreaseItemQuantity = "cart/increaseItemQuantity";
-export const CartDecreaseItemQuantity = "cart/decreaseItemQuantity";
+const cartAddItems = "cart/addItem";
+const cartRemoveItems = "cart/removeItem";
+const CartIncreaseItemQuantity = "cart/increaseItemQuantity";
+const CartDecreaseItemQuantity = "cart/decreaseItemQuantity";
 
 //Action Creators
 export function decreaseCartItemQuantity(productId) {

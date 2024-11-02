@@ -3,17 +3,12 @@
 import { combineReducers, createStore } from "redux";
 import CartReducer, {
   CartAddItem,
-  cartAddItems,
-  CartDecreaseItemQuantity,
-  CartIncreaseItemQuantity,
   decreaseCartItemQuantity,
   increaseCartItemQuantity,
 } from "./CartReducer";
 import WishListReducer, {
   AddWhishlistItem,
   RemoveWishlistItems,
-  WishlistAddItems,
-  WishlistRemoveItems,
 } from "./WishlistReducer";
 import ProductsReducer from "./ProductsReducer";
 
