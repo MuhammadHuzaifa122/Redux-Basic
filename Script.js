@@ -1,7 +1,11 @@
+// Check the working of Redux Toolkit behind the scene using debugger
+
 import { combineReducers, createStore } from "redux";
 import CartReducer, {
   cartAddItems,
+  CartDecreaseItemQuantity,
   CartIncreaseItemQuantity,
+  decreaseCartItemQuantity,
 } from "./CartReducer";
 import WishListReducer, {
   WishlistAddItems,
@@ -31,6 +35,17 @@ store.dispatch({
   type: CartIncreaseItemQuantity,
   payload: { productId: 12 },
 });
+store.dispatch({
+  type: CartIncreaseItemQuantity,
+  payload: { productId: 12 },
+});
+store.dispatch({
+  type: CartDecreaseItemQuantity,
+  payload: { productId: 12 },
+});
+const a = decreaseCartItemQuantity(70);
+console.log(a);
+
 store.dispatch({
   type: WishlistAddItems,
   payload: { productId: 18 },

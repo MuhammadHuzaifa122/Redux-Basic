@@ -1,8 +1,17 @@
+//Action Types
 export const cartAddItems = "cart/addItem";
 export const cartRemoveItems = "cart/removeItem";
 export const CartIncreaseItemQuantity = "cart/increaseItemQuantity";
 export const CartDecreaseItemQuantity = "cart/decreaseItemQuantity";
 
+//Action Creators
+export function decreaseCartItemQuantity(productId) {
+  return {
+    type: CartDecreaseItemQuantity,
+    payload: { productId },
+  };
+}
+//Reducers
 export default function CartReducer(state = [], action) {
   switch (action.type) {
     case cartAddItems:
@@ -21,14 +30,21 @@ export default function CartReducer(state = [], action) {
       });
 
     case CartDecreaseItemQuantity:
-      return state.cartItems
-        .map((cartItem) => {
-          if (cartItem.productId === action.payload.productId) {
-            return { ...cartItem, quantity: cartItem.quantity - 1 };
-          }
-          return cartItem;
-        })
-        .filter((cartItem) => cartItem.quantity > 0);
+      if (state.cartItems) {
+        return {
+          ...state,
+          cartItems: state.cartItems
+            .map((cartItem) => {
+              if (cartItem.productId === action.payload.productId) {
+                return { ...cartItem, quantity: cartItem.quantity - 1 };
+              }
+              return cartItem;
+            })
+            .filter((cartItem) => cartItem.quantity > 0),
+        };
+      } else {
+        return state;
+      }
 
     default:
       return state;
