@@ -11,6 +11,12 @@ export function decreaseCartItemQuantity(productId) {
     payload: { productId },
   };
 }
+export function increaseCartItemQuantity(productId) {
+  return {
+    type: CartIncreaseItemQuantity,
+    payload: { productId },
+  };
+}
 //Reducers
 export default function CartReducer(state = [], action) {
   switch (action.type) {

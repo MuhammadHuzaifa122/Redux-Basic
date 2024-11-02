@@ -6,6 +6,7 @@ import CartReducer, {
   CartDecreaseItemQuantity,
   CartIncreaseItemQuantity,
   decreaseCartItemQuantity,
+  increaseCartItemQuantity,
 } from "./CartReducer";
 import WishListReducer, {
   WishlistAddItems,
@@ -31,10 +32,7 @@ store.dispatch({
   type: cartAddItems,
   payload: { productId: 12, quantity: 1 },
 });
-store.dispatch({
-  type: CartIncreaseItemQuantity,
-  payload: { productId: 12 },
-});
+store.dispatch(increaseCartItemQuantity(12));
 store.dispatch(decreaseCartItemQuantity(12));
 store.dispatch(decreaseCartItemQuantity(12));
 
