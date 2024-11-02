@@ -24,7 +24,7 @@ export function CartAddItem(productId, quantity = 1) {
   };
 }
 
-export function CartRemoveItem(productId, quantity = 1) {
+export function CartRemoveItem(productId) {
   return {
     type: cartRemoveItems,
     payload: { productId },
