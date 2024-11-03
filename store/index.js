@@ -20,17 +20,17 @@ const reducer = combineReducers({
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__?.());
 
-console.log(store);
+// console.log(store);
 
-store.dispatch(CartAddItem(12));
-store.dispatch(CartAddItem(1));
+// store.dispatch(CartAddItem(12));
+// store.dispatch(CartAddItem(1));
 
-store.dispatch(increaseCartItemQuantity(12));
+// store.dispatch(increaseCartItemQuantity(12));
 
-store.dispatch(decreaseCartItemQuantity(12));
-store.dispatch(decreaseCartItemQuantity(12));
+// store.dispatch(decreaseCartItemQuantity(12));
+// store.dispatch(decreaseCartItemQuantity(12));
 
-store.dispatch(AddWhishlistItem(18));
-store.dispatch(AddWhishlistItem(11));
+// store.dispatch(AddWhishlistItem(18));
+// store.dispatch(AddWhishlistItem(11));
 
-store.dispatch(RemoveWishlistItems(11));
+// store.dispatch(RemoveWishlistItems(11));
