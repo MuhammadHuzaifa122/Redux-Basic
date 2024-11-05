@@ -3,6 +3,7 @@ import Product from "./components/Product";
 import "./App.css";
 import { useSelector } from "react-redux";
 export default function App() {
+  //Use Selector is used to get the data from the store and comes in react redux
   const productsList = useSelector((state) => state.products);
 
   return (
