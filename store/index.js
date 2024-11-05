@@ -5,12 +5,12 @@ import CartReducer, {
   CartAddItem,
   decreaseCartItemQuantity,
   increaseCartItemQuantity,
-} from "./CartReducer";
+} from "./store/CartReducer";
 import WishListReducer, {
   AddWhishlistItem,
   RemoveWishlistItems,
-} from "./WishlistReducer";
-import ProductsReducer from "./ProductsReducer";
+} from "./store/WishlistReducer";
+import ProductsReducer from "./store/ProductsReducer";
 
 const reducer = combineReducers({
   products: ProductsReducer,
