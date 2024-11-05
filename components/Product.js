@@ -11,7 +11,7 @@ export default function Product({ title, rating, price, imageUrl }) {
       </div>
       <div className="price-rating-container">
         <p className="rating">{+rating} ★ ★ ★ ★</p>
-        <p className="price">{price}</p>
+        <p className="price">${price}</p>
       </div>
       <div className="cta-container">
         <button>Add to Cart</button>

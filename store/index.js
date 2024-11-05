@@ -5,12 +5,12 @@ import CartReducer, {
   CartAddItem,
   decreaseCartItemQuantity,
   increaseCartItemQuantity,
-} from "./store/CartReducer";
+} from "./CartReducer.js";
 import WishListReducer, {
   AddWhishlistItem,
   RemoveWishlistItems,
-} from "./store/WishlistReducer";
-import ProductsReducer from "./store/ProductsReducer";
+} from "./WishlistReducer.js";
+import ProductsReducer from "./ProductsReducer.js";
 
 const reducer = combineReducers({
   products: ProductsReducer,
@@ -18,7 +18,10 @@ const reducer = combineReducers({
   wishList: WishListReducer,
 });
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__?.());
+export const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__?.()
+);
 
 // console.log(store);
 
