@@ -34,6 +34,18 @@ export function CartRemoveItem(productId) {
 export default function CartReducer(state = [], action) {
   switch (action.type) {
     case cartAddItems:
+      const existingItem = state.find(
+        (cartItem) => cartItem.productId === action.payload.productId
+      );
+
+      if (existingItem) {
+        return state.map((cartItem) => {
+          if (cartItem.productId === existingItem.productId) {
+            return { ...cartItem, quantity: cartItem.quantity + 1 };
+          }
+          return cartItem;
+        });
+      }
       return [...state, action.payload];
 
     case cartRemoveItems:
